@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive JavaScript quiz and live programming joke generator built for ApexPlanet Internship Task 3.">
+  <title>Apex Interactive Lab | Task 3</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="brand-mark">A</span>
+      <span>APEX<span class="brand-light"> LAB</span></span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#quiz">Interactive Quiz</a>
+      <a href="#api">Live API</a>
+    </nav>
+
+    <a class="header-button" href="#quiz">Start Learning ↗</a>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow"><span class="status-dot"></span> APEXPLANET INTERNSHIP · TASK 03</p>
+        <h1>Learn by doing.<br><span>Build by exploring.</span></h1>
+        <p class="hero-description">
+          An interactive playground for JavaScript, responsive design,
+          and real-world API integration.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#quiz">Take the quiz <span>→</span></a>
+          <a class="text-button" href="#api">Explore live API ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>03</strong><span>Core concepts</span></div>
+          <div><strong>100%</strong><span>Interactive</span></div>
+          <div><strong>01</strong><span>Live API</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Code illustration">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="code-window">
+          <div class="window-bar">
+            <span></span><span></span><span></span>
+            <small>interactive.js</small>
+          </div>
+          <div class="code-content">
+            <p><span class="code-muted">01</span> <span class="code-purple">const</span> future = <span class="code-green">"yours"</span>;</p>
+            <p><span class="code-muted">02</span> <span class="code-purple">function</span> <span class="code-blue">keepLearning</span>() {</p>
+            <p><span class="code-muted">03</span> &nbsp; return <span class="code-green">"keep building"</span>;</p>
+            <p><span class="code-muted">04</span> }</p>
+            <p><span class="code-muted">05</span> <span class="code-blue">keepLearning</span>(); <span class="cursor"></span></p>
+          </div>
+          <div class="code-footer"><span class="status-dot"></span> SYSTEM ONLINE <span>HTML · CSS · JS</span></div>
+        </div>
+        <div class="floating-tag tag-top">✦ Responsive UI</div>
+        <div class="floating-tag tag-bottom">↗ Real API data</div>
+      </div>
+    </section>
+
+    <section class="section-intro">
+      <p class="eyebrow">YOUR LEARNING SPACE</p>
+      <h2>Three concepts. One project.</h2>
+      <p>Explore the skills required for Task 3 through hands-on interaction.</p>
+    </section>
+
+    <section class="feature-grid" aria-label="Project features">
+      <article class="feature-card">
+        <span class="feature-icon">⌘</span>
+        <p class="card-number">01 / RESPONSIVE CSS</p>
+        <h3>Adaptive by design</h3>
+        <p>Media queries adjust the layout for desktop, tablet, and mobile screens.</p>
+        <a href="#quiz">Explore the quiz ↗</a>
+      </article>
+      <article class="feature-card">
+        <span class="feature-icon">✳</span>
+        <p class="card-number">02 / JAVASCRIPT</p>
+        <h3>Learn interactively</h3>
+        <p>Answer questions, receive instant feedback, and track your progress.</p>
+        <a href="#quiz">Test your skills ↗</a>
+      </article>
+      <article class="feature-card">
+        <span class="feature-icon">⌁</span>
+        <p class="card-number">03 / API INTEGRATION</p>
+        <h3>Connect to the web</h3>
+        <p>Fetch a programming joke from a public API and display it dynamically.</p>
+        <a href="#api">Try the API ↗</a>
+      </article>
+    </section>
+
+    <section id="quiz" class="learning-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CHALLENGE YOURSELF</p>
+          <h2>The JavaScript quiz</h2>
+          <p>Five questions. Instant feedback. One smarter developer.</p>
+        </div>
+        <span class="pill">INTERACTIVE</span>
+      </div>
+
+      <div class="quiz-card">
+        <div class="quiz-topline">
+          <span id="question-count">QUESTION 01 / 05</span>
+          <span id="score-label">Score: 0</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <h3 id="question-text">Loading your first question...</h3>
+        <div id="answer-options" class="answer-options"></div>
+        <p id="quiz-feedback" class="quiz-feedback" aria-live="polite"></p>
+        <div class="quiz-controls">
+          <span id="question-hint">Choose the best answer.</span>
+          <button id="next-button" class="primary-button" type="button" disabled>
+            Next question →
+          </button>
+        </div>
+        <div id="quiz-result" class="quiz-result" aria-live="polite" hidden></div>
+        <button id="restart-button" class="secondary-button" type="button" hidden>
+          ↻ Try again
+        </button>
+      </div>
+    </section>
+
+    <section id="api" class="api-section">
+      <div class="api-copy">
+        <p class="eyebrow">LIVE DATA · PUBLIC API</p>
+        <h2>A little code.<br><span>A little comedy.</span></h2>
+        <p>
+          This feature sends a request to a public API, receives JSON data,
+          and updates the page without reloading it.
+        </p>
+        <div class="api-status"><span class="status-dot"></span> Connected when a request succeeds</div>
+      </div>
+
+      <div class="joke-card">
+        <div class="joke-card-top">
+          <span class="feature-icon">☻</span>
+          <span class="pill">PROGRAMMING JOKES</span>
+        </div>
+        <p class="joke-label">YOUR RANDOM JOKE</p>
+        <blockquote id="joke-text" aria-live="polite">
+          Ready to add a little humour to your coding session?
+        </blockquote>
+        <p id="api-status" class="api-message" aria-live="polite">
+          Press the button to fetch a joke.
+        </p>
+        <button id="joke-button" class="primary-button" type="button">
+          Get a new joke <span>↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="closing-banner">
+      <div>
+        <p class="eyebrow">KEEP BUILDING</p>
+        <h2>Small steps. Real skills.</h2>
+        <p>Built with HTML, CSS, JavaScript, and curiosity.</p>
+      </div>
+      <a href="#home" class="secondary-button">Back to top ↑</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#home"><span class="brand-mark">A</span> APEX LAB</a>
+    <p>Task 3 · Advanced Styling and JavaScript</p>
+    <p>Made as part of the ApexPlanet Web Development Internship.</p>
+  </footer>
+</body>
+</html>
